@@ -1,0 +1,124 @@
+.header-text {
+  font-weight: bold;
+  font-size: .7em;
+  text-transform: uppercase;
+  color: white;
+  background: #132857;
+}
+/* MAIN CHAT STYLE. */
+#chat {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background: white;
+  width: 250px;
+  box-shadow: -3px 0px 10px -3px silver;
+  border-left: 1px solid #CCCCCC;
+}
+/* CHAT HEADER. */
+#chat .header {
+  padding: 5px;
+  background: #EDEDED;
+  font-weight: bold;
+  font-size: .7em;
+  text-transform: uppercase;
+  color: white;
+  background: #132857;
+}
+/* CHAT TABS. */
+#chat .tabs .tab {
+  display: inline-block;
+  padding: 5px 0px;
+  text-align: center;
+  width: 50%;
+  font-size: .8em;
+  background: #132857;
+  clear: bottom;
+  color: white;
+  font-weight: bold;
+}
+#chat .tabs .tab:hover {
+  cursor: pointer;
+}
+#chat .tabs .tab.active {
+  background: #8F31E8;
+  color: white;
+}
+/* CHAT CONTACTS. */
+#chat .user-contacts {
+  height: 700px;
+}
+#chat .user-contacts .contact {
+  padding: 5px;
+  border-bottom: 1px solid #DBDBDB;
+  color: #575757;
+  font-size: .8em;
+}
+/* CHAT IM. */
+#chat .im {
+  height: 700px;
+}
+#chat .im .header {
+  background: white;
+  color: grey;
+  border-bottom: 1px solid silver;
+}
+#chat .im .messages {
+  padding: 10px;
+}
+#chat .im .message {
+  padding: 5px;
+  border: 1px solid #2E29BA;
+  margin-bottom: 5px;
+  border-top-right-radius: 15px;
+  color: #8F31E8;
+  font-size: .85em;
+  background: #8F31E8;
+  color: white;
+}
+#chat .im .message .content {
+  line-height: 18px;
+}
+#chat .im .message.self {
+  border: 1px solid #8F31E8;
+  color: #8F31E8;
+  background: white;
+}
+#chat .im .message .name {
+  font-weight: bold;
+  color: white;
+  margin-bottom: 4px;
+}
+#chat .im .message .time {
+  text-align: right;
+  margin-top: 5px;
+  font-size: .8em;
+}
+#chat .im .message-input {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 35px;
+  border-top: 1px solid #8C8C8C;
+}
+#chat .im .message-input input {
+  border-radius: 1px;
+  width: 80%;
+  border: none;
+  padding: 5px 4px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+#chat .im .message-input button {
+  display: inline-block;
+  width: 19.9%;
+  height: 100%;
+  background: blue;
+  color: white;
+  font-size: .8em;
+  border: none;
+  vertical-align: top;
+  margin: 0px;
+  padding: 0px;
+}
