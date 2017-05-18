@@ -75,15 +75,15 @@ var ChatIm = function (_React$Component) {
                         return _react2.default.createElement(
                             "div",
                             { key: index, className: message.senderId == window.userId ? 'message self' : 'message' },
-                            _react2.default.createElement(
+                            message.senderId != window.userId && _react2.default.createElement(
                                 "div",
                                 { className: "name" },
-                                message.senderId == window.userId ? 'Me' : message.senderName
+                                message.senderName
                             ),
                             _react2.default.createElement(
                                 "div",
                                 { className: "content" },
-                                message
+                                message.message
                             ),
                             _react2.default.createElement(
                                 "div",

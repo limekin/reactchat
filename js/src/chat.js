@@ -19,8 +19,9 @@ class Chat extends React.Component {
         // Binds.
         this.updateSelectedContact = this.updateSelectedContact.bind(this);
         this.handleTabClick = this.handleTabClick.bind(this);
+        this.addMessage = this.addMessage.bind(this);
         socket.on('new_message', function(data) {
-            this.state.messages.push(data.message);
+            this.state.messages.push(data);
             this.setState({
                 messages: this.state.messages
             }); 
@@ -66,9 +67,9 @@ class Chat extends React.Component {
     }
 
     addMessage(newMessage) {
-        this.state.messages.push(mnewMessage);
+        this.state.messages.push(newMessage);
         this.setState({
-            messages: messages
+            messages: this.state.messages
         })
     }
 
@@ -78,7 +79,8 @@ class Chat extends React.Component {
          *---
          */
         let activeComponent = <ChatIm selectedContact={this.state.selectedContact} 
-            messages={this.state.messages} />
+            messages={this.state.messages}
+            addMessage={this.addMessage} />
         if(this.state.activeTab == 'Contacts')
             activeComponent = <ChatContacts contacts={this.state.contacts}
                  updateSelectedContact={this.updateSelectedContact} />;

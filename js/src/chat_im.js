@@ -46,11 +46,13 @@ class ChatIm extends React.Component {
                     
                     {this.props.messages.map( (message, index) => 
                         <div key={index} className={message.senderId == window.userId ? 'message self' : 'message'}>
-                            <div className='name'>
-                                { message.senderId == window.userId ? 'Me' : message.senderName }
-                            </div>
+                            { message.senderId != window.userId &&
+                                <div className='name'>
+                                    {message.senderName}
+                                </div>
+                            }
                             <div className='content'>
-                                {message}
+                                {message.message}
                             </div>
                             <div className='time'>
                                 { new Date(message.timestamp).getHours() + ":" + new Date(message.timestamp).getMinutes()}

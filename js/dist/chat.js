@@ -40,8 +40,9 @@ var Chat = function (_React$Component) {
         // Binds.
         _this.updateSelectedContact = _this.updateSelectedContact.bind(_this);
         _this.handleTabClick = _this.handleTabClick.bind(_this);
+        _this.addMessage = _this.addMessage.bind(_this);
         socket.on('new_message', function (data) {
-            this.state.messages.push(data.message);
+            this.state.messages.push(data);
             this.setState({
                 messages: this.state.messages
             });
@@ -95,7 +96,12 @@ var Chat = function (_React$Component) {
         }
     }, {
         key: 'addMessage',
-        value: function addMessage() {}
+        value: function addMessage(newMessage) {
+            this.state.messages.push(newMessage);
+            this.setState({
+                messages: this.state.messages
+            });
+        }
     }, {
         key: 'render',
         value: function render() {
@@ -104,7 +110,8 @@ var Chat = function (_React$Component) {
              *---
              */
             var activeComponent = _react2.default.createElement(_chat_im.ChatIm, { selectedContact: this.state.selectedContact,
-                messages: this.state.messages });
+                messages: this.state.messages,
+                addMessage: this.addMessage });
             if (this.state.activeTab == 'Contacts') activeComponent = _react2.default.createElement(_chat_contacts.ChatContacts, { contacts: this.state.contacts,
                 updateSelectedContact: this.updateSelectedContact });
 
